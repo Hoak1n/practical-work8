@@ -1,0 +1,24 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --navy950: #0e1323;
+  --navy900: #1c204b;
+  --navy800: #33397a;
+  --navy200: #bbc0ff;
+  --orange300: #ff8b64;
+  --purple700: #7335d2;
+  --purple600: #5747ea;
+  --purple500: #7078c9;
+  --blue300: #55c2e6;
+  --pink400: #ffb2c0;
+  --green400: #4bcf82;
+  --yellow300: #ffea9f;
+  --gray200: #d8d8d8;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+}
