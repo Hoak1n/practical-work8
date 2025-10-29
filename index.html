@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,102 +7,38 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="dashboard">
-      <div class="profile-card">
-        <div class="profile-info">
-          <img
-            src="assets/images/avatar_male.png"
-            alt="User Avatar"
-            class="avatar"
-          />
-          <div>
-            <p>Report for</p>
-            <h1>Yehor<br />Fesenko</h1>
+    <main>
+      <div class="dashboard-grid">
+        <!-- Картка профілю -->
+        <div class="profile-card">
+          <!-- Верхня частина профілю -->
+          <div class="profile-card-content">
+            <img
+              src="assets/images/avatar_male.png"
+              alt="User Avatar"
+              class="profile-card-avatar"
+            />
+            <div class="profile-card-text">
+              <p>Report for</p>
+              <h1>Yehor Fesenko</h1>
+            </div>
           </div>
+          <nav class="profile-card-nav">
+            <ul>
+              <li>
+                <a href="#" class="time-link active" data-timeframe="daily">Daily</a>
+              </li>
+              <li>
+                <a href="#" class="time-link" data-timeframe="weekly">Weekly</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <div class="timeframes">
-          <button class="active">Daily</button>
-          <button>Weakly</button>
+        <div id="activity-grid" class="activity-grid-container">
+          <div class="loading-text">Loading activity data...</div>
         </div>
       </div>
-
-      <!-- Work -->
-      <div class="activity-card work">
-        <div class="activity-bg"></div>
-        <div class="activity-content">
-          <div class="activity-header">
-            <h2>Work</h2>
-            <span>...</span>
-          </div>
-          <p class="hours">32hrs</p>
-          <p class="previous">Last Week - 36hrs</p>
-        </div>
-      </div>
-
-      <!-- Play -->
-      <div class="activity-card play">
-        <div class="activity-bg"></div>
-        <div class="activity-content">
-          <div class="activity-header">
-            <h2>Play</h2>
-            <span>...</span>
-          </div>
-          <p class="hours">10hrs</p>
-          <p class="previous">Last Week - 8hrs</p>
-        </div>
-      </div>
-
-      <!-- Study -->
-      <div class="activity-card study">
-        <div class="activity-bg"></div>
-        <div class="activity-content">
-          <div class="activity-header">
-            <h2>Study</h2>
-            <span>...</span>
-          </div>
-          <p class="hours">4hrs</p>
-          <p class="previous">Last Week - 7hrs</p>
-        </div>
-      </div>
-
-      <!-- Exercise -->
-      <div class="activity-card exercise">
-        <div class="activity-bg"></div>
-        <div class="activity-content">
-          <div class="activity-header">
-            <h2>Exercise</h2>
-            <span>...</span>
-          </div>
-          <p class="hours">4hrs</p>
-          <p class="previous">Last Week - 5hrs</p>
-        </div>
-      </div>
-
-      <!-- Social -->
-      <div class="activity-card social">
-        <div class="activity-bg"></div>
-        <div class="activity-content">
-          <div class="activity-header">
-            <h2>Social</h2>
-            <span>...</span>
-          </div>
-          <p class="hours">5hrs</p>
-          <p class="previous">Last Week - 10hrs</p>
-        </div>
-      </div>
-
-      <!-- Self Care -->
-      <div class="activity-card selfcare">
-        <div class="activity-bg"></div>
-        <div class="activity-content">
-          <div class="activity-header">
-            <h2>Self Care</h2>
-            <span>...</span>
-          </div>
-          <p class="hours">2hrs</p>
-          <p class="previous">Last Week - 2hrs</p>
-        </div>
-      </div>
-    </div>
+    </main>
+    <script src="script.js" defer></script>
   </body>
 </html>

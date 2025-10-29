@@ -9,7 +9,7 @@
       "weekly": {
         "current": 32,
         "previous": 36
-      },
+      }
     }
   },
   {
@@ -22,7 +22,7 @@
       "weekly": {
         "current": 10,
         "previous": 8
-      },
+      }
     }
   },
   {
@@ -35,7 +35,7 @@
       "weekly": {
         "current": 4,
         "previous": 7
-      },
+      }
     }
   },
   {
@@ -48,7 +48,7 @@
       "weekly": {
         "current": 4,
         "previous": 5
-      },
+      }
     }
   },
   {
@@ -61,7 +61,7 @@
       "weekly": {
         "current": 5,
         "previous": 10
-      },
+      }
     }
   },
   {
@@ -74,7 +74,7 @@
       "weekly": {
         "current": 2,
         "previous": 2
-      },
+      }
     }
   }
 ]

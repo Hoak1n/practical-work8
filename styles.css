@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
 
 :root {
+  /* Кольори з дизайну */
+  --color-very-dark-blue: #0d1323;
+
+  --color-dark-blue: #4c4c4c;
+  --color-desaturated-blue: #34397b;
+  --color-pale-blue: #d0d8ff;
+  --color-pale-blue-nav: #6f76c8;
   --white: #ffffff;
   --navy950: #000000;
   --navy900: #4c4c4c;
@@ -17,132 +24,346 @@
   --gray200: #d0d0d0;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Rubik", "sans-serif";
   background-color: var(--navy950);
   color: var(--white);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 24px;
 }
 
-.dashboard {
+main {
+  width: 100%;
+  max-width: 1116px;
+  margin: 0 auto;
+}
+
+.dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
+  grid-template-columns: 1fr;
   gap: 32px;
-  width: 1116px;
 }
 
 .profile-card {
-  grid-row: span 2;
   background-color: var(--navy900);
   border-radius: 15px;
-  gap: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 32px;
 }
 
-.profile-info {
+.profile-card-content {
   background-color: var(--purple600);
-  padding: 24px;
+  padding: 31px 30px;
   border-radius: 15px;
   gap: 8px;
   display: flex;
   align-items: center;
+  flex-grow: 1;
 }
 
-.avatar {
+.profile-card-avatar {
   width: 78px;
   height: 78px;
   border-radius: 50%;
+  border: 4px solid var(--white);
+  flex-shrink: 0;
 }
 
-.timeframes {
+.profile-card-text p {
+  color: var(--navy200);
+  font-size: 14px;
+}
+
+.profile-card-text h1 {
+  font-size: 24px;
+  padding-top: 8px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.profile-card-nav {
+  padding: 24px 32px;
+}
+
+.profile-card-nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 16px;
+  justify-content: space-between;
 }
 
-.timeframes button {
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0;
-  background: none;
-  border: none;
-  color: var(--white);
+.time-link {
   font-size: 18px;
-  cursor: pointer;
-  text-align: left;
-  margin-top: 21px;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.timeframes button:active,
-.timeframes button:hover {
+.time-link:hover {
   color: var(--purple500);
 }
 
-/* Card */
+.time-link.active {
+  color: var(--purple500);
+  font-weight: 500;
+}
+
+.activity-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
 .activity-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
-  border-radius: 15px;
   overflow: hidden;
-}
-
-.activity-bg {
-  height: 60px;
-}
-
-.activity-content {
-  background-color: var(--navy900);
-  border-radius: 15px;
+  display: flex;
   gap: 8px;
-  padding: 32px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 
-.hours {
-  font-size: 56px;
-  line-height: 66px;
-  font-weight: 300;
-  margin: 10px 0 5px;
-}
-
-.previous {
-  color: var(--navy200);
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
-.work .activity-bg {
+.bg-card-work {
   background-color: var(--orange300);
 }
-
-.play .activity-bg {
+.bg-card-play {
   background-color: var(--blue300);
 }
-
-.study .activity-bg {
+.bg-card-study {
   background-color: var(--pink400);
 }
-
-.exercise .activity-bg {
+.bg-card-exercise {
   background-color: var(--green400);
 }
-
-.social .activity-bg {
+.bg-card-social {
   background-color: var(--purple700);
 }
-
-.self-care .activity-bg {
+.bg-card-self-care {
   background-color: var(--yellow300);
+}
+
+.activity-card-content {
+  background-color: var(--color-dark-blue);
+  padding: 31px 30px;
+  border-radius: 15px;
+  position: relative;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  margin-top: 45px;
+  flex-grow: 1;
+}
+
+.activity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.activity-card-header h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+}
+.activity-card-header a {
+  color: #d8d8d8;
+  text-decoration: none;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.activity-card-header a:hover {
+  color: white;
+}
+
+.activity-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activity-card-body .hours {
+  font-size: 32px;
+  font-weight: 300;
+}
+.activity-card-body .previous {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-pale-blue);
+}
+
+/* --- Media Queries --- */
+/* Планшети (md) */
+@media (min-width: 768px) {
+  main {
+    width: auto;
+  }
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 612px;
+  }
+
+  .profile-card {
+    grid-column: span 3;
+    height: 203px;
+  }
+
+  .profile-card-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    height: 133px;
+    padding: 34.5px 32px;
+  }
+
+  .profile-card-text h1 {
+    font-size: 24px;
+    padding-top: 8px;
+  }
+
+  .profile-card-nav {
+    height: 70px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-card-nav ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 75px;
+  }
+
+  .activity-grid-container {
+    grid-column: span 3;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .activity-card {
+    height: 213px;
+  }
+
+  .activity-card-content {
+    margin-top: 33px;
+    padding: 21.5px 25.5px;
+  }
+
+  .activity-card-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .activity-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .activity-card-body .hours {
+    font-size: 56px;
+    font-weight: 300;
+  }
+
+  .activity-card-body .previous {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+/* Декстопи (lg) */
+@media (min-width: 1024px) {
+  .activity-card {
+    height: 244px;
+  }
+
+  .activity-card-content {
+    margin-top: 40px;
+    padding: 31px 30px;
+  }
+
+  .dashboard-grid {
+    max-width: 1116px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .profile-card {
+    grid-row: span 2;
+    grid-column: span 1;
+    height: auto;
+  }
+  .profile-card-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 3rem;
+    gap: 40px;
+    height: 354px;
+    padding: 32px;
+  }
+  .profile-card-text h1 {
+    font-size: 40px;
+  }
+  .profile-card-nav {
+    padding-top: 28px;
+    padding-left: 32px;
+    padding-bottom: 32px;
+    flex-grow: 1;
+    height: 166px;
+    align-items: left;
+    justify-content: left;
+  }
+  .profile-card-nav ul {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  .activity-grid-container {
+    grid-column: span 3;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: span 2;
+  }
+
+  .activity-card-header {
+    margin-bottom: 24px;
+  }
+  .activity-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .activity-card-body .hours {
+    font-size: 56px;
+  }
+  .activity-card-body .previous {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+}
+
+/* Стан завантаження / Помилки */
+.loading-text,
+.error-text {
+  color: var(--color-pale-blue);
+  text-align: center;
+  padding: 2.5rem;
+}
+.error-text {
+  color: var(--color-study);
+}
+
+@media (min-width: 1024px) {
+  .loading-text,
+  .error-text {
+    grid-column: span 3;
+  }
 }
